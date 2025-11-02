@@ -7,7 +7,7 @@ import AquaButton from "../components/AquaButton";
 import AquaTextField from "../components/AquaTextField";
 import SoftButton from "../components/SoftButton";
 
-const Person = () => {
+const SamplePage = () => {
 
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -42,4 +42,4 @@ const Person = () => {
     );
 };
 
-export default Person;
+export default SamplePage;

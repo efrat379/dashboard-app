@@ -1,9 +1,9 @@
-import Person from './Person.jsx';
+import SamplePage from './SamplePage.jsx';
 
 export default function PersonPage(){
     return(
         <div>
-            <Person />
+            <SamplePage />
         </div>
     );
 }

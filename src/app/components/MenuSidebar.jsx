@@ -12,7 +12,7 @@ const MenuSidebar = () => {
         'PLACES': [
             { label: 'Guest', href: '/' },
             { label: 'Product', href: './product' },
-            { label: 'Person', href: './person' }, 
+            { label: 'Sample Page', href: './sample_page' },
         ],
     };
 

@@ -57,7 +57,7 @@
 
     /* Gradien biru yang lebih halus */
     background-image:
-        linear-gradient(to bottom, #d2dfe646 0%, #c5ccd0dc 50%, #d2dfe646 100%);
+        linear-gradient(to bottom, #f9fafadc 0%, #dbe3e6dc 50%, #f9fafabd 100%);
 
     /* Efek Kilauan (Glow) yang lebih kuat */
     box-shadow:
