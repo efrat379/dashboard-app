@@ -1,0 +1,70 @@
+/* styles/FinderSidebar.module.css */
+
+.sidebar, 
+.sidebar * {
+    box-sizing: border-box;
+}
+
+.sidebar {
+    position: fixed;
+    box-sizing: border-box; 
+    top: 22px; /* <-- Mulai 22px dari atas */
+    left: 0;
+    width: 200px; 
+    height: 100vh; 
+    background:
+        linear-gradient(to right, #2a2929 0%, #6f6a6a 100%);
+    border-right: 0.5px solid #3d3b3b;
+    padding-top: 10px;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.sectionHeader {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    /* MODIFIKASI INI: Kurangi margin vertikal */
+    margin: 15px 15px 3px 15px; 
+    /* Nilai 3px memastikan jarak minimal antara header dan item pertama */
+}
+
+.listItem {
+    font-size: 13px;
+    color: #ffffff;
+    
+    display: block;
+    width: 100%; /* Sekarang 100% sudah termasuk padding 3px 15px */
+    
+    text-decoration: none;
+    padding: 3px 15px; /* Padding di sini tidak akan menambah lebar */
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box; /* Pastikan ini diterapkan secara global */
+}
+
+.listItem:hover {
+    background-color: #4b6a99; /* Gradien halus saat hover */
+    display: block;
+}
+
+/* Gaya untuk item yang sedang aktif (terpilih) */
+.active {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    background-image: 
+        linear-gradient(to bottom, #033c86 0%, #1448b8 100%);
+    box-shadow: 
+    i   unset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.active:hover {
+    background-image: 
+        linear-gradient(to bottom, #033c86 0%, #1448b8 100%);
+}

@@ -1,0 +1,112 @@
+.macAquaButton {
+    /* Hapus display:block; dan margin-bottom jika Anda ingin kontrol layout dari komponen induk */
+    display: inline-block; /* Gunakan inline-block agar tombol menyesuaikan konten */
+    margin-bottom: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    /* Ubah border-radius agar tombol memiliki tampilan oval yang halus */
+    border-radius: 12px;
+    font-size: 14px;
+    padding: 0.2rem 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.1);
+    /* Hapus max-width: 64px !important; kecuali Anda benar-benar membutuhkannya */
+    /*max-width: 150px;*/
+    position: relative; /* Penting untuk pseudo-element */
+    overflow: hidden; /* Penting agar efek pantulan tidak bocor */
+}
+
+/* --- Gradien Warna --- */
+.aquaButtonBlue {
+    background: linear-gradient(#4b86f4, #83dffd);
+}
+.aquaButtonGrey {
+    /*background: linear-gradient(#a7b4be94, #c9d1d690 80%);*/
+    background : linear-gradient(to bottom, #cdcdcd2d 0%, #a29f9fa5 50%, #cdcdcd2d 100%);
+}
+
+/* --- Pseudo-element ::before (Bayangan Dalam/Struktur) --- */
+.macAquaButton::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 10px;
+    /* Tambahkan inset untuk menempatkan ::before di tengah */
+    top: 0;
+    left: 5%;
+}
+
+/* --- Pseudo-element ::after (Efek Pantulan Cahaya - Blue) --- */
+.aquaButtonBlue::after {
+    mix-blend-mode: color-dodge;
+    content: "";
+    position: absolute;
+    /* Atur ulang top dan left agar efeknya relatif terhadap padding tombol */
+    top: 5px;
+    left: 5%;
+    border-radius: 60px 60px 30px 30px;
+    width: 90%; /* Mengisi sebagian besar lebar */
+    height: 10px;
+    /* Hapus overflow: hidden; di sini karena sudah ada di elemen induk */
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.3)
+    );
+    opacity: 0.7;
+    z-index: 3;
+}
+
+/* --- Pseudo-element ::after (Efek Pantulan Cahaya - Grey) --- */
+/* Karena efek pantulan berbeda, kita terapkan pada kelas warna yang berbeda */
+.aquaButtonGrey::after {
+    mix-blend-mode: color-dodge;
+    content: "";
+    position: absolute;
+    top: 5px; /* Atur ulang posisi agar sesuai dengan tombol grey */
+    left: 5%;
+    border-radius: 160px 160px 30px 30px;
+    width: 90%;
+    height: 10px;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0.3)
+    );
+    opacity: 0.7;
+    z-index: 3;
+}
+
+.macAquaButton:hover {
+    cursor: pointer;
+    /* Sedikit melepaskan bayangan agar terlihat 'siap' diklik */
+    box-shadow: 2px 2px 8px 1px rgba(0, 110, 255, 0.449); 
+}
+
+.macAquaButton:active {
+    /* Simulasi penekanan: tombol bergerak 1px ke bawah */
+    transform: translateY(1px);
+    /* Bayangan ke dalam (inset) untuk efek penekanan tombol */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Blue Active: Buat gradiennya lebih gelap atau lebih datar */
+.aquaButtonBlue:active {
+    background: linear-gradient(#0033a0, #60c8e6); /* Warna dasar sedikit lebih gelap */
+}
+
+/* Grey Active: Buat gradiennya lebih datar (tanpa pantulan yang terang) */
+.aquaButtonGrey:active {
+    background: linear-gradient(#b0b0b0, #ddd 80%); /* Gradien yang lebih seragam */
+}
+
+/* -------------------------------------- */
+/* PERHATIAN: Efek Pantulan (::after) saat Active */
+/* -------------------------------------- */
+/* Anda mungkin ingin menyembunyikan atau mengurangi opacity dari pantulan cahaya 
+   (pseudo-element ::after) saat tombol diklik (active) */
+
+.aquaButtonBlue:active::after,
+.aquaButtonGrey:active::after {
+    opacity: 0; /* Hilangkan pantulan cahaya saat ditekan */
+    transition: opacity 0.1s ease-out;
+}

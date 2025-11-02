@@ -1,0 +1,151 @@
+.customButton {
+    /* [Gaya dasar yang sudah Anda definisikan sebelumnya] */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(hsl(0 0% 100% / 0.85), transparent 10px),
+    linear-gradient(hsl(0 0% 100% / 0.25) 10px, transparent 10px),
+    radial-gradient(
+        circle at 10px 5px,
+        hsl(0 0% 100% / 0.25) 5px,
+        transparent 5px
+    ),
+    radial-gradient(
+        circle at 0px 5px,
+        hsl(0 0% 100% / 0.25) 5px,
+        transparent 5px
+    ),
+    /* Gradien Normal: Biru ke Hijau Muda */
+    linear-gradient(hsl(213, 79%, 56%), hsl(181, 95%, 92%));
+    
+    /*padding: 0.5em 3em;*/
+    padding: 0.5em 1.5em;
+    background-size: 100%, calc(100% - 30px), 10px 10px, 10px 10px, 100%;
+    background-position: top, top center, top left, top right, center;
+    background-repeat: no-repeat;
+    border: 1px solid hsl(0, 100%, 1%);
+    border-radius: 100vw;
+    position: relative;
+    /* Tambahkan transisi agar perubahan gradien lebih halus */
+    /*transition: background-image 0.2s ease-in-out;*/
+    transition: box-shadow 0.2s ease-in-out, background-image 0.2s ease-in-out; 
+}
+
+/* --- Efek Hover --- */
+.customButton:hover {
+    /* Sedikit mengubah gradien untuk efek hover yang nyata */
+    /* Misalnya, mengubah hue/saturation agar terlihat lebih hidup */
+    background-image: linear-gradient(hsl(0 0% 100% / 0.85), transparent 10px),
+    linear-gradient(hsl(0 0% 100% / 0.25) 10px, transparent 10px),
+    radial-gradient(
+        circle at 10px 5px,
+        hsl(0 0% 100% / 0.35) 5px, /* Sedikit lebih terang saat hover */
+        transparent 5px
+    ),
+    radial-gradient(
+        circle at 0px 5px,
+        hsl(0 0% 100% / 0.35) 5px, /* Sedikit lebih terang saat hover */
+        transparent 5px
+    ),
+    /* Gradien Hover: Sedikit lebih gelap/berubah */
+    linear-gradient(hsl(213, 79%, 46%), hsl(181, 95%, 85%)); 
+    cursor: pointer;
+
+    box-shadow: 
+        0 0 15px 5px hsl(213, 79%, 65%), /* Bayangan dalam (Glow Utama) */
+        0 0 30px 10px hsl(213, 79%, 65% / 0.5); /* Bayangan luar (Glow Lembut) */
+}
+
+/* --- Efek Active (Saat Diklik) --- */
+.customButton:active {
+    /* Paling gelap/tertekan untuk memberikan feedback fisik */
+    background-image: linear-gradient(hsl(0 0% 100% / 0.85), transparent 10px),
+    linear-gradient(hsl(0 0% 100% / 0.15) 10px, transparent 10px), /* Sedikit transparansi */
+    radial-gradient(
+        circle at 10px 5px,
+        hsl(0 0% 100% / 0.15) 5px,
+        transparent 5px
+    ),
+    radial-gradient(
+        circle at 0px 5px,
+        hsl(0 0% 100% / 0.15) 5px,
+        transparent 5px
+    ),
+    /* Gradien Active: Lebih gelap lagi */
+    linear-gradient(hsl(213, 79%, 36%), hsl(181, 95%, 75%)); 
+
+    /* Sedikit pergeseran ke bawah untuk simulasi penekanan tombol */
+    transform: translateY(1px); 
+    box-shadow: none;
+}
+
+.primaryButton {
+    /* [Gaya dasar yang sudah Anda definisikan sebelumnya] */
+    background-image: linear-gradient(hsl(0 0% 100% / 0.85), transparent 10px),
+    linear-gradient(hsl(0 0% 100% / 0.25) 10px, transparent 10px),
+    radial-gradient(
+        circle at 10px 5px,
+        hsl(0 0% 100% / 0.25) 5px,
+        transparent 5px
+    ),
+    radial-gradient(
+        circle at 0px 5px,
+        hsl(0 0% 100% / 0.25) 5px,
+        transparent 5px
+    ),
+    /* Gradien Normal: Biru ke Hijau Muda */
+    linear-gradient(hsl(216, 21%, 75%), hsl(180, 13%, 92%));
+    
+    /*padding: 0.5em 3em;*/
+    padding: 0.5em 1.5em;
+    background-size: 100%, calc(100% - 30px), 10px 10px, 10px 10px, 100%;
+    background-position: top, top center, top left, top right, center;
+    background-repeat: no-repeat;
+    border: -1px;
+    border-radius: 100vw;
+    position: relative;
+    /* Tambahkan transisi agar perubahan gradien lebih halus */
+    transition: background-image 0.2s ease-in-out; 
+}
+
+/* --- Efek Hover --- */
+.primaryButton:hover {
+    /* Sedikit mengubah gradien untuk efek hover yang nyata */
+    /* Misalnya, mengubah hue/saturation agar terlihat lebih hidup */
+    background-image: linear-gradient(hsl(0 0% 100% / 0.85), transparent 10px),
+    linear-gradient(hsl(0 0% 100% / 0.25) 10px, transparent 10px),
+    radial-gradient(
+        circle at 10px 5px,
+        hsl(0 0% 100% / 0.35) 5px, /* Sedikit lebih terang saat hover */
+        transparent 5px
+    ),
+    radial-gradient(
+        circle at 0px 5px,
+        hsl(0 0% 100% / 0.35) 5px, /* Sedikit lebih terang saat hover */
+        transparent 5px
+    ),
+    /* Gradien Hover: Sedikit lebih gelap/berubah */
+    linear-gradient(hsl(214, 92%, 85%), hsl(180, 33%, 96%)); 
+    cursor: pointer;
+}
+
+/* --- Efek Active (Saat Diklik) --- */
+.primaryButton:active {
+    /* Paling gelap/tertekan untuk memberikan feedback fisik */
+    background-image: linear-gradient(hsl(0 0% 100% / 0.85), transparent 10px),
+    linear-gradient(hsl(0 0% 100% / 0.15) 10px, transparent 10px), /* Sedikit transparansi */
+    radial-gradient(
+        circle at 10px 5px,
+        hsl(0 0% 100% / 0.15) 5px,
+        transparent 5px
+    ),
+    radial-gradient(
+        circle at 0px 5px,
+        hsl(0 0% 100% / 0.15) 5px,
+        transparent 5px
+    ),
+    /* Gradien Active: Lebih gelap lagi */
+    linear-gradient(hsl(210, 3%, 59%), hsl(0, 0%, 84%)); 
+
+    /* Sedikit pergeseran ke bawah untuk simulasi penekanan tombol */
+    transform: translateY(1px); 
+    box-shadow: none;
+}

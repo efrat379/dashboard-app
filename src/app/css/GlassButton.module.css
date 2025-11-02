@@ -1,0 +1,48 @@
+/* styles/NeumorphicButton.module.css */
+
+/* Definisikan variabel warna langsung di dalam kelas .button */
+.glassButton {
+    /* --- Variabel Warna Khusus Tombol --- */
+    /* CATATAN: Warna latar belakang tombol HARUS SAMA dengan latar belakang halaman. */
+    --bg-color: #e0e5ec;
+    --main-color: #2c3e50;
+    --light-shadow: #ffffff;
+    --dark-shadow: #a3b1c6;
+
+    /* --- Styling Dasar --- */
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    border: none;
+    cursor: pointer;
+    padding: 12px 25px;
+    border-radius: 50px; 
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    transition: all 0.2s ease-in-out;
+
+    /* EFEK TIMBUL (CONVEX) */
+    box-shadow: 6px 6px 12px var(--dark-shadow),
+            -6px -6px 12px var(--light-shadow);
+}
+
+/* Gaya untuk Tombol Kecil (...) */
+
+/* Efek Hover */
+.glassButton:hover, .smallButton:hover {
+    box-shadow: 4px 4px 8px var(--dark-shadow),
+                -4px -4px 8px var(--light-shadow);
+}
+
+/* Efek Active/Klik (Terlihat Cekung) */
+.glassButton:active, .smallButton:active {
+    box-shadow: inset 4px 4px 8px var(--dark-shadow),
+                inset -4px -4px 8px var(--light-shadow);
+}
+
+/* Styling untuk Ikon */
+.icon {
+    font-size: 1.2em; 
+}

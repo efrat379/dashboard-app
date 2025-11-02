@@ -1,0 +1,160 @@
+/* styles/DialogButton.module.css */
+
+.button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0.5px solid rgba(0, 24, 110, 0.533);
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 20px;
+
+    /* Membuat tombol lebih rounded */
+    border-radius: 15px;
+
+    color: #333;
+    
+    transition: all 0.1s ease-in-out;
+
+    /* Gradien untuk efek 3D yang lebih otentik */
+    background-image:
+        linear-gradient(to bottom, #528dfc4a 0%, #0059ff72 50%, #528dfc4a 100%);
+
+    /* Bayangan untuk ilusi kedalaman */
+    box-shadow:
+        0 0 10px rgba(156, 186, 220, 0.33),      /* Kilauan utama */
+        inset 0 1px 0 rgba(255, 255, 255, 0.3), /* Highlight internal */
+        0 1px 2px rgba(0, 26, 255, 0.2);           /* Bayangan luar */
+}
+
+/* Efek saat kursor di atas tombol */
+.button:hover {
+    background-image:
+        linear-gradient(to bottom, #95b0d071 0%, #4f98ff58 50%, #95b0d071 100%);
+    box-shadow:
+        0 0 15px rgba(111, 168, 247, 0.9),
+        0 2px 0 rgba(111, 168, 247, 0.4),
+        0 2px 4px rgba(0, 132, 255, 0.3);
+}
+
+/* Efek saat tombol ditekan */
+.button:active {
+    transform: translateY(1px);
+    background-image:
+        linear-gradient(to bottom, #d5d5d5 0%, #e0e0e0 100%);
+    box-shadow:
+        inset 0 1px 2px rgba(0, 0, 0, 0.3),
+        0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya untuk tombol utama (Authenticate) */
+.primary {
+    color: #000000;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #326baf64;
+
+    /* Gradien biru yang lebih halus */
+    background-image:
+        linear-gradient(to bottom, #d2dfe646 0%, #c5ccd0dc 50%, #d2dfe646 100%);
+
+    /* Efek Kilauan (Glow) yang lebih kuat */
+    box-shadow:
+        0 0 10px rgba(158, 183, 212, 0.33),      /* Kilauan utama */
+        inset 0 1px 0 rgba(255, 255, 255, 0.3), /* Highlight internal */
+        0 1px 2px rgba(0, 110, 255, 0.2);           /* Bayangan luar */
+}
+
+.primary:hover {
+    background-image:
+        linear-gradient(to bottom, #95b0d071 0%, #4f98ff58 50%, #95b0d071 100%);
+    box-shadow:
+        0 0 15px rgba(111, 168, 247, 0.9),
+        0 2px 0 rgba(111, 168, 247, 0.4),
+        0 2px 4px rgba(0, 132, 255, 0.3);
+}
+
+.primary:active {
+    transform: translateY(1px);
+    background-image:
+        linear-gradient(to bottom, #d5d5d5 0%, #e0e0e0 100%);
+    box-shadow:
+        inset 0 1px 2px rgba(0, 0, 0, 0.3),
+        0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.delete {
+    color: #373737;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.157);
+    border: 1px solid #274d7b64;
+
+    /* Gradien biru yang lebih halus */
+    background-image:
+        linear-gradient(to bottom, #fc8e8e67 0%, #f404046c 50%, #fc8e8e67 100%);
+
+    /* Efek Kilauan (Glow) yang lebih kuat */
+    box-shadow:
+        0 0 10px rgba(156, 186, 220, 0.33),      /* Kilauan utama */
+        inset 0 1px 0 rgba(255, 255, 255, 0.3), /* Highlight internal */
+        0 1px 2px rgba(0, 0, 0, 0.2);           /* Bayangan luar */
+}
+
+.delete:hover {
+    background-image:
+        linear-gradient(to bottom, #ff4646 0%, #ff0000 50%, #ff4646 100%);
+    box-shadow:
+        0 0 15px rgba(247, 111, 111, 0.9),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        0 1px 3px rgba(255, 46, 46, 0.3);
+}
+
+.delete:active {
+    transform: translateY(1px);
+    background-image:
+        linear-gradient(to bottom, #d13f3f 0%, #d74747 100%);
+    box-shadow:
+        inset 0 1px 2px rgba(255, 0, 0, 0.3),
+        0 1px 1px rgba(255, 0, 0, 0.2);
+}
+
+.edit {
+    color: #373737;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.157);
+    border: 1px solid #7a7b2764;
+
+    /* Gradien biru yang lebih halus */
+    background-image:
+        linear-gradient(to bottom, #fcfc8e67 0%, #d3be0351 50%, #fcfc8e67 100%);
+
+    /* Efek Kilauan (Glow) yang lebih kuat */
+    box-shadow:
+        0 0 10px rgba(156, 186, 220, 0.33),      /* Kilauan utama */
+        inset 0 1px 0 rgba(255, 255, 255, 0.3), /* Highlight internal */
+        0 1px 2px rgba(0, 0, 0, 0.2);           /* Bayangan luar */
+}
+
+.edit:hover {
+    background-image:
+        linear-gradient(to bottom, #ffcc00 0%, #ffcc00 50%, #ffcc00 100%);
+    box-shadow:
+        0 0 15px rgba(245, 247, 111, 0.9),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        0 1px 3px rgba(252, 255, 46, 0.3);
+}
+
+.edit:active {
+    transform: translateY(1px);
+    background-image:
+        linear-gradient(to bottom, #d1b43f 0%, #d7b847 100%);
+    box-shadow:
+        inset 0 1px 2px rgba(255, 221, 0, 0.3),
+        0 1px 1px rgba(234, 255, 0, 0.2);
+}
+
+.button:disabled {
+    opacity: 1;
+    background-color: #ffffff;
+    cursor: not-allowed;
+    
+}

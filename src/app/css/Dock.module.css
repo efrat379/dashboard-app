@@ -1,0 +1,43 @@
+/* style.css atau styles/Dock.module.css */
+
+.dock-container {
+    /* Harus FIXED agar tetap di tempat meskipun halaman di-scroll */
+    position: fixed; 
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Menengahkan Dock secara horizontal */
+    z-index: 1000; /* Pastikan Dock berada di atas elemen lain */
+}
+
+.dock-bar {
+    display: flex;
+    padding: 10px 15px;
+    border-radius: 20px;
+    gap: 15px; /* Jarak antar ikon */
+    
+    /* --- Efek Glassmorphism (Kunci Tampilan) --- */
+    background: rgba(255, 255, 255, 0.2); /* Latar belakang semi-transparan */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Efek buram yang penting */
+    -webkit-backdrop-filter: blur(10px); /* Dukungan Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Garis tepi tipis */
+}
+
+.dock-item {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    /* Pastikan transisi untuk gaya zoom sudah diatur di komponen JSX */
+    /* transition: transform 0.2s ease-out; */
+}
+
+/* Kunci: Efek zoom yang sudah diatur melalui state React/Style */
+/* Untuk meningkatkan efek, Anda bisa menambahkan sedikit bayangan pada ikon saat hover */
+.dock-item:hover {
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+}

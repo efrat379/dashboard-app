@@ -1,0 +1,224 @@
+/* styles/FinderTable.module.css */
+
+.searchableHeader {
+    /* Ubah display dari grid menjadi flexbox untuk menata label dan input */
+    display: flex;
+}
+
+.tableContainer {
+    width: 730px;
+    height: auto;
+    border: 1px solid #c9c9c9;
+    border-radius: 6px;
+    background-color: #fcfcfc;
+    overflow-y: auto; /* Mengaktifkan scrolling */
+    overflow-x: auto; /* Mengaktifkan scrolling */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* --- Gaya Scrollbar Otentik --- */
+/* Gaya untuk seluruh scrollbar */
+.tableContainer::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+}
+
+/* Gaya untuk "thumb" (bagian yang digulir) */
+.tableContainer::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+/* Gaya saat hover */
+.tableContainer::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.tableContainer::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+/* --- Akhir Gaya Scrollbar --- */
+
+.headerRow {
+    position: sticky;
+    top: 0;
+    background-image:
+        linear-gradient(to bottom, #8d8d8d69 0%, #1f1f1f54 50%, #8d8d8d69 100%);
+    border-bottom: 1px solid #a5a8af;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000000;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.columnHeader {
+    display: flex; /* Jadikan kolom flex container */
+    flex-direction: column; /* Tumpuk label dan input secara vertikal */
+    align-items: flex-start; /* Sejajarkan item ke kiri */
+    padding: 8px 10px;
+    cursor: default;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-right: 1px solid #626262;
+    
+}
+
+.columnHeader:first-child {
+    padding-left: 20px;
+}
+
+.columnHeader:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.searchInput {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    flex: 1;
+    margin-top: 5px;
+    height: 25px;
+    padding: 0 8px;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    border: 0.5px solid #c8c8c8;
+    background-color: #fcfcfc;
+    box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.1), 0 0.5px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.2s ease-in-out;
+    border-radius: 15px !important;/* <--- Di sini properti rounded */
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: #79aee5;
+    box-shadow: 0 0 5px rgba(121, 174, 229, 0.8), inset 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.searchInput[type="search"]::-webkit-search-decoration,
+.searchInput[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+.tableBody {
+    font-size: 12px;
+}
+
+.headerRow,
+.tableRow {
+    display: grid;
+    /* Tambahkan kolom baru untuk checkbox, atur lebarnya menjadi 40px */
+    grid-template-columns: 40px minmax(150px, 1fr) minmax(100px, 1fr) minmax(80px, 1fr) minmax(120px, 1fr);
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.cell input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Efek warna baris selang-seling */
+.tableRow:nth-child(odd) {
+    background-color: #e8e8e8;
+}
+
+.tableRow:hover {
+    background-color: #b8cff0;
+}
+
+/* Gaya untuk baris yang aktif (terpilih) */
+.active {
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(to bottom, #89abda 0%, #5d93e8 100%);
+}
+
+.columnHeader,
+.cell {
+    padding: 8px 10px;
+    cursor: default;
+    overflow: auto;
+    text-overflow: clip;
+    white-space: nowrap;
+    border-right: 0.5px solid rgba(111, 113, 119, 0.5);
+}
+
+.columnHeader:first-child,
+.cell:first-child {
+    padding-left: 20px;
+}
+
+.columnHeader:last-child,
+.cell:last-child {
+    border-right: none;
+    padding-right: 20px;
+}
+
+.tableWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pagination {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.inlineDetailContainer {
+    width: 300px;
+    margin: 0 auto; /* Tambahkan baris ini */
+    margin-top: -1px;
+    border: 1px solid #c9c9c9;
+    border-top: none;
+    border-radius: 6px 6px 6px 6px;
+    background-image:
+        linear-gradient(to bottom, #bab6b608 0%, #ffffff48 50%, #bab6b608 100%);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.inlineDetailContent {
+    text-align: center; /* Tambahkan baris ini */
+    width: 100%;
+    color: #000000;
+}
+
+.inlineDetailContent h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.inlineDetailContent p {
+    margin: 3px 0;
+}

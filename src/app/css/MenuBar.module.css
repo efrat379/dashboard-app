@@ -1,0 +1,85 @@
+/* styles/MenuBar.module.css */
+.menuBar,
+.menuBar * {
+    box-sizing: border-box; 
+}
+
+.menuBar {
+    /* ... gaya yang sudah ada ... */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 1000;
+    background-image: linear-gradient(to bottom, rgba(230, 230, 230, 0.7) 0%, rgba(210, 210, 210, 0.7) 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    color: #333;
+}
+
+.leftSide,
+.rightSide {
+    display: flex;
+    align-items: center;
+}
+
+.appleIcon {
+    /* Atur ukuran gambar */
+    width: 18px;
+    height: auto;
+    margin-right: 10px;
+    /* Hapus font-size dan font-weight jika ada */
+}
+
+.menuItemWrapper {
+    position: relative; /* Penting untuk menempatkan dropdown secara absolut */
+}
+
+.menuItem {
+    margin-right: 15px;
+    padding: 0 5px; /* Tambahkan padding untuk area klik */
+    cursor: default;
+}
+
+.statusItem {
+    margin-left: 10px;
+}
+
+.dropdown {
+    position: absolute;
+    top: 22px; /* Posisikan di bawah menu bar */
+    left: 0;
+    width: max-content;
+    min-width: 180px;
+    background-color: #f1f1f1;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    z-index: 1001; /* Pastikan di atas menu bar */
+}
+
+.dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown li {
+    padding: 5px 10px;
+    cursor: default;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+.dropdown li:hover {
+    background-color: #5d98ec;
+    color: #fff;
+}
